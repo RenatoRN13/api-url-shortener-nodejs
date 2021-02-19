@@ -16,6 +16,7 @@ DATABASE
 It was used postgreSQL 13. To configure the application with the database, it was used Knex. The table creation script could be found in the file: "src/database/script/create_table.sql".
  
 HOW EXECUTES
+
 To facilitate the application execution, I created a script in package.json. This script to allow run the app using the command as following:
  
 - npm run start
@@ -33,17 +34,23 @@ Now use port 3000 to make requests.
 HOW WORKS
 
 POST
+
 To register new sites through a POST, the user should make a request to 'localhost:8081/encurtador' and to set the URL in the request body. Example:
 {
-            	url: 'wisereducacao.com'
+    url: 'wisereducacao.com'
 }
  
 There are two possible results to this request. The first return is a "short url" with request status 200. The second return is the message "URL already registered" with request status 400. The last case happens because the url passed in the request body already registered in a before request.
  
 Status 200
-{ 'localhost:8081/kas783bds2' }
+{ 
+   'localhost:8081/kas783bds2' 
+}
+
 Status 400
-{ 'URL already registered' }
+{ 
+   'URL already registered' 
+}
  
 GET
 
